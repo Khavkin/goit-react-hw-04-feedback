@@ -27,13 +27,13 @@ export const App = () => {
     const feedback = event.target.name;
     switch (feedback) {
       case 'good':
-        setGood(good + 1);
+        setGood(oldGood => oldGood + 1);
         break;
       case 'neutral':
-        setNeutral(neutral + 1);
+        setNeutral(oldNeutral => oldNeutral + 1);
         break;
       case 'bad':
-        setBad(bad + 1);
+        setBad(oldBad => oldBad + 1);
         break;
       default:
         break;
