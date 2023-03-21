@@ -10,7 +10,7 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  //state = { good: 0, neutral: 0, bad: 0 };
+  const notifications = { good, neutral, bad };
 
   const countTotalFeedback = () => {
     const total = good + neutral + bad;
@@ -44,7 +44,7 @@ export const App = () => {
     <Container>
       <Section title="Please leave feadback">
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
+          options={Object.keys(notifications)}
           onLeaveFeedback={onLeaveFeedback}
         ></FeedbackOptions>
       </Section>
